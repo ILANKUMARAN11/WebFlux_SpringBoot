@@ -1,8 +1,6 @@
 package com.example.webfluxdemo.payload;
 
-/**
- * Created by rajeevkumarsingh on 22/10/17.
- */
+
 public class ErrorResponse {
     private String message;
 
