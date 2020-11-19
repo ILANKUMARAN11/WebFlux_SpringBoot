@@ -1,0 +1,13 @@
+
+isquid:CommentedOutCodeLineH"<This block of commented-out lines of code should be removed.(¿÷Ë8Ü• ¨›.
+^squid:S4684!"@Replace this persistent entity with a simple POJO or DTO object.(‰Ø×Õ8Š‚ÃØœ.
+Esquid:S1481;"'Remove this unused "tt" local variable.(ç”îì8Ü• ¨›.
+xsquid:S1488A"ZImmediately return this expression instead of assigning it to the temporary variable "rs".(È·™‰8Ü• ¨›.
+csquid:S46848"@Replace this persistent entity with a simple POJO or DTO object.(Ç…ƒ’úÿÿÿÿ8Š‚ÃØœ.
+zsquid:UselessImportCheck"JRemove this unused import 'com.example.webfluxdemo.payload.ErrorResponse'.(éÂÃèúÿÿÿÿ8Â¶å«›.
+isquid:CommentedOutCodeLine["<This block of commented-out lines of code should be removed.(…Ö¿Ö8Ü• ¨›.
+Dsquid:S14810"'Remove this unused "tt" local variable.(ÀÙ¿8Ü• ¨›.
+usquid:UselessImportCheck"JRemove this unused import 'org.springframework.dao.DuplicateKeyException'.(„öÚ‹8Â¶å«›.
+wsquid:S2293A"YReplace the type specification in this constructor call with the diamond operator ("<>").(È·™‰8Ü• ¨›.
+‹squid:UselessImportCheck"[Remove this unused import 'com.example.webfluxdemo.exception.model.TweetNotFoundException'.(öËŞüÿÿÿÿ8Â¶å«›.
+Osquid:S1612(",Replace this lambda with a method reference.(ÜÜşÿÿÿÿÿ8Ü• ¨›.
