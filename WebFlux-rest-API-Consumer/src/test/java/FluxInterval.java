@@ -2,12 +2,10 @@ import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Flux;
 
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 /*
-     => Consider the situation where u want the publisher to emits items every specified Interval of time/
+     => Consider the situation where u want the
+            publisher to emits items every specified Interval of time.
      => Our goal is to create Flux for (data1, data2, data3, …)
                         that emits items every specified Interval of time.
  */

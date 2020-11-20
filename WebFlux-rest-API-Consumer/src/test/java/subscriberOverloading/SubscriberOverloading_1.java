@@ -1,3 +1,5 @@
+package subscriberOverloading;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.reactivestreams.Subscription;
@@ -9,7 +11,7 @@ import java.util.List;
 import java.util.function.Consumer;
 
 
-public class ConsumerOverloading_1 {
+public class SubscriberOverloading_1 {
 
 
 
