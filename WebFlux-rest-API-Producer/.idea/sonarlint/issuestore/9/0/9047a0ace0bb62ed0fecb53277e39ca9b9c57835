@@ -1,9 +1,0 @@
-
-usquid:UselessImportCheck	"JRemove this unused import 'org.springframework.context.annotation.Import'.(ˆÈè8ÖúÒØœ.
-nsquid:CommentedOutCodeLine2"<This block of commented-out lines of code should be removed.(óµóíüÿÿÿÿ8ä½ÔØœ.
-isquid:CommentedOutCodeLine6"<This block of commented-out lines of code should be removed.(–ÓáĞ8ä½ÔØœ.
-‡squid:UselessImportCheck
-"\Remove this unused import 'org.springframework.web.reactive.config.ResourceHandlerRegistry'.(İí¶8»œµØœ.
-esquid:UselessImportCheck":Remove this unused import 'org.reactivestreams.Publisher'.(²°˜8»œµØœ.
-hsquid:UselessImportCheck"8Remove this unused import 'reactor.core.publisher.Mono'.(²îöØÿÿÿÿÿ8»œµØœ.
-hsquid:UselessImportCheck"8Remove this unused import 'reactor.core.publisher.Flux'.(·äÍÆøÿÿÿÿ8ø¥¶Øœ.
