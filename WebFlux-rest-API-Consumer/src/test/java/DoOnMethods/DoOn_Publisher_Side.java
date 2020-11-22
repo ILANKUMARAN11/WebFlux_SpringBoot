@@ -1,11 +1,11 @@
-package PusblisherDoOn;
+package DoOnMethods;
 
 import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Mono;
 
 
 //Project Reactor Essentials 06 - Mono doOnSubscribe, doOnRequest, doOnNext, doOnSuccess
-public class PublisherDoOn_2 {
+public class DoOn_Publisher_Side {
 
 
     @Test
