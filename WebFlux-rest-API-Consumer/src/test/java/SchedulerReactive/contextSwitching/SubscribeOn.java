@@ -16,7 +16,7 @@ public class SubscribeOn {
                     log("Map1", i);
                     return i;
                 })
-                .publishOn(scheduler)
+                .subscribeOn(scheduler)
                 .map(i -> {
                     log("Map2", i);
                     return i;
@@ -31,7 +31,7 @@ public class SubscribeOn {
 
     private <T> void log(String operatorName, T element) {
         System.out.println("Operator::" + operatorName
-                + ", element:: " + element
-                + ", Thread Name:: " + Thread.currentThread().getName());
+                + ", Thread Name:: " + Thread.currentThread().getName()
+                + ", element:: " + element);
     }
 }

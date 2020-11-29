@@ -24,9 +24,9 @@ public class RunOn {
 
     }
 
-    private <T>  void log(String operatorName, T element){
-        System.out.println("Operator::"+operatorName
-                +", element:: "+element
-                +", Thread Name:: "+Thread.currentThread().getName());
+    private <T> void log(String operatorName, T element) {
+        System.out.println("Operator::" + operatorName
+                + ", Thread Name:: " + Thread.currentThread().getName()
+                + ", element:: " + element);
     }
 }
