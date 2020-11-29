@@ -1,4 +1,4 @@
-package Schedulers.defaultThreadingModel;
+package SchedulerReactive.defaultThreadingModel;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -34,9 +34,9 @@ public class Default_Threading_Model {
     }
 
 
-    private void log(String operatorName, Object element){
-        System.out.println("Operator Name ::: "+operatorName
-                +", element ::: "+element
-                +", Thread Name ::: "+Thread.currentThread().getName());
+    private <T>  void log(String operatorName, T element){
+        System.out.println("Operator::"+operatorName
+                +", element:: "+element
+                +", Thread Name:: "+Thread.currentThread().getName());
     }
 }
