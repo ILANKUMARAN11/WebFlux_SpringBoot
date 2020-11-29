@@ -1,4 +1,4 @@
-package SchedulerReactive;
+package SchedulerReactive.contextSwitching;
 
 import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Flux;

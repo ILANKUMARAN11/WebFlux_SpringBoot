@@ -1,27 +1,14 @@
-package SchedulerReactive;
+package SchedulerReactive.contextSwitching;
 
 import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Flux;
 import reactor.core.scheduler.Scheduler;
 import reactor.core.scheduler.Schedulers;
 
-public class PublishOn {
+public class SubscribeOn {
 
     @Test
-    public void publishOn() {
-
-
-//        Flux.range(1, 2)
-//                .map(i -> i+1)
-//                .publishOn(Schedulers.single())
-//                .map(i -> i*2)
-//                .publishOn(Schedulers.parallel())
-//                .map(i -> i*7)
-//                .subscribe();
-
-
-
-
+    public void subscribeOn() {
         Scheduler scheduler = Schedulers.newSingle("SingleThread");
 
         Flux.range(1, 2).log()
@@ -34,6 +21,7 @@ public class PublishOn {
                     log("Map2", i);
                     return i;
                 })
+                .publishOn(Schedulers.parallel())
                 .map(i -> {
                     log("Map3", i);
                     return i;
