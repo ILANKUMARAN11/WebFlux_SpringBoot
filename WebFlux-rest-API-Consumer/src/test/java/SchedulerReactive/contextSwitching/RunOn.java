@@ -12,13 +12,10 @@ public class RunOn {
 
         int CPU_Core = Runtime.getRuntime().availableProcessors();
 
-        Flux.range(1, 7)
+        Flux.range(1, 6)
                 .parallel()
-                .runOn(Schedulers.parallel())
-                .map(i -> {
-                    log("Map", i);
-                    return i;
-                })
+                .runOn(Schedulers.newParallel("Parallel"))
+                .map(i -> i)
                 .sequential()
                 .subscribe();
 
