@@ -72,7 +72,7 @@ public class ConsumerTweetController {
         return webClient
                 .post()
                 .uri("/TweetProducer")
-                .body(BodyInserters.fromObject(tweet))
+                .body(BodyInserters.fromValue(tweet))
                 .retrieve()
                 .bodyToMono(Tweet.class);
     }
