@@ -1,4 +1,4 @@
-package Operators.flatMap;
+package Operators_Methods.flatMap;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -8,17 +8,18 @@ import reactor.test.StepVerifier;
 
 import java.util.HashMap;
 
-public class ConcatMap {
+
+public class FlatMapWithScheduler {
 
     @Test
-    @DisplayName("ConcatMap Scheduler Example")
+    @DisplayName("FlatMap Async More Faster with Parallel Scheduler Example")
     public void squareNo(){
         Flux<String> stringFlux= Flux.range(1,10).
                 window(2).
-                concatMap(identifiers-> identifiers.
+                flatMap(identifiers-> identifiers.
                         flatMap(empId->Flux.just(getEmpName(empId))).subscribeOn(Schedulers.newParallel("P"))).
-                subscribeOn(Schedulers.newParallel("P1")).
-                log();
+                        subscribeOn(Schedulers.newParallel("P1")).
+                        log();
 
 
         StepVerifier.create(stringFlux)
@@ -26,7 +27,7 @@ public class ConcatMap {
                 .verifyComplete();
 
         try {
-            Thread.sleep(50000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -55,4 +56,5 @@ public class ConcatMap {
 
         return empData.get(empId);
     }
+
 }

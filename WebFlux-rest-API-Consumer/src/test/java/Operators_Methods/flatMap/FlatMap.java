@@ -1,36 +1,30 @@
-package Operators.flatMap;
+package Operators_Methods.flatMap;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Flux;
-import reactor.core.scheduler.Schedulers;
 import reactor.test.StepVerifier;
 
 import java.util.HashMap;
 
 
-public class FlatMapWithScheduler {
+public class FlatMap {
 
     @Test
-    @DisplayName("FlatMap Async More Faster with Parallel Scheduler Example")
+    @DisplayName("FlatMap Async Example")
     public void squareNo(){
         Flux<String> stringFlux= Flux.range(1,10).
-                window(2).
-                flatMap(identifiers-> identifiers.
-                        flatMap(empId->Flux.just(getEmpName(empId))).subscribeOn(Schedulers.newParallel("P"))).
-                        subscribeOn(Schedulers.newParallel("P1")).
-                        log();
+                flatMap(e-> Flux.just(getEmpName(e))). //FlatMap to make DB or External service call that returns Flux/Mono .
+                log();
 
-
+        Long start = System.currentTimeMillis();
         StepVerifier.create(stringFlux)
-                .expectNextCount(10)
+                .expectNext(new String[]{"A","B","C","D","E","F","G","H","I","J"})
                 .verifyComplete();
+        Long finish = System.currentTimeMillis();
 
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        long timeElapsed = finish-start;
+        System.out.println("Duration of Completion in MILLI_SECONDS >>>>"+timeElapsed);
     }
 
 

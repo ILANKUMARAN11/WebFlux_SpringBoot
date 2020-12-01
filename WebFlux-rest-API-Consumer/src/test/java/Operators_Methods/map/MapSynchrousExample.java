@@ -1,20 +1,20 @@
-package Operators.flatMap;
+package Operators_Methods.map;
 
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Flux;
 import reactor.test.StepVerifier;
 
 import java.util.HashMap;
+public class MapSynchrousExample {
 
+    /*
+        # This Example is to calculate time that taken by using Map function.
 
-public class FlatMap {
-
+     */
     @Test
-    @DisplayName("FlatMap Async Example")
     public void squareNo(){
         Flux<String> stringFlux= Flux.range(1,10).
-                flatMap(e-> Flux.just(getEmpName(e))). //FlatMap to make DB or External service call that returns Flux/Mono .
+                map(e-> getEmpName(e)). //Map to make DB or External service call that returns Flux/Mono .
                 log();
 
         Long start = System.currentTimeMillis();
@@ -50,5 +50,4 @@ public class FlatMap {
 
         return empData.get(empId);
     }
-
 }

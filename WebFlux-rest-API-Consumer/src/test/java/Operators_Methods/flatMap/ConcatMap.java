@@ -1,4 +1,4 @@
-package Operators.flatMap;
+package Operators_Methods.flatMap;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -8,14 +8,14 @@ import reactor.test.StepVerifier;
 
 import java.util.HashMap;
 
-public class FlatMapSequential {
+public class ConcatMap {
 
     @Test
-    @DisplayName("FlatMapSequential Scheduler Example")
+    @DisplayName("ConcatMap Scheduler Example")
     public void squareNo(){
         Flux<String> stringFlux= Flux.range(1,10).
                 window(2).
-                flatMapSequential(identifiers-> identifiers.
+                concatMap(identifiers-> identifiers.
                         flatMap(empId->Flux.just(getEmpName(empId))).subscribeOn(Schedulers.newParallel("P"))).
                 subscribeOn(Schedulers.newParallel("P1")).
                 log();

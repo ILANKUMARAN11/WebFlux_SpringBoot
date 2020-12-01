@@ -1,4 +1,4 @@
-package Operators;
+package Operators_Methods;
 
 import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Flux;

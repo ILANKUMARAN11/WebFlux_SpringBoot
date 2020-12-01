@@ -1,7 +1,5 @@
 package com.ilan.controller;
 
-import javax.validation.Valid;
-
 import com.ilan.model.Tweet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -67,7 +65,7 @@ public class ConsumerTweetController {
   //Save all Tweet by 3 ways of body
 
     @PostMapping("/BodyInserters")
-    public Mono<Tweet> createTweetsBodyInserters(@Valid @RequestBody Tweet tweet) {
+    public Mono<Tweet> createTweetsBodyInserters(@RequestBody Tweet tweet) {
         WebClient webClient = webClientBuilder.baseUrl("http://WebFlux-Producer").build();
         return webClient
                 .post()
@@ -78,7 +76,7 @@ public class ConsumerTweetController {
     }
     
     @PostMapping("/syncBody")
-    public Mono<Tweet> createTweetsSyncBody(@Valid @RequestBody Tweet tweet) {
+    public Mono<Tweet> createTweetsSyncBody(@RequestBody Tweet tweet) {
         WebClient webClient = webClientBuilder.baseUrl("http://WebFlux-Producer").build();
         return webClient
                 .post()
@@ -90,7 +88,7 @@ public class ConsumerTweetController {
     
     
     @PostMapping("/justBody")
-    public Mono<Tweet> createTweetsBody(@Valid @RequestBody Tweet tweet) {
+    public Mono<Tweet> createTweetsBody(@RequestBody Tweet tweet) {
         WebClient webClient = webClientBuilder.baseUrl("http://WebFlux-Producer").build();
         return webClient
                 .post()
@@ -127,7 +125,7 @@ public class ConsumerTweetController {
     
     @PutMapping("/update/{id}")
     public Mono<Tweet> updateTweet(@PathVariable(value = "id") String tweetId,
-                                                   @Valid @RequestBody Tweet tweet) {
+                                                   @RequestBody Tweet tweet) {
         WebClient webClient = webClientBuilder.baseUrl("http://WebFlux-Producer").build();
 		
     	return webClient

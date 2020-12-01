@@ -1,4 +1,4 @@
-package Operators;
+package FluxTimeInterval;
 
 import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Flux;

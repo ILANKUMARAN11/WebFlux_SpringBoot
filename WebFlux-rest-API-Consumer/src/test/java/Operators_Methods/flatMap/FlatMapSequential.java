@@ -1,30 +1,35 @@
-package Operators.map;
+package Operators_Methods.flatMap;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Flux;
+import reactor.core.scheduler.Schedulers;
 import reactor.test.StepVerifier;
 
 import java.util.HashMap;
-public class MapSynchrousExample {
 
-    /*
-        # This Example is to calculate time that taken by using Map function.
+public class FlatMapSequential {
 
-     */
     @Test
+    @DisplayName("FlatMapSequential Scheduler Example")
     public void squareNo(){
         Flux<String> stringFlux= Flux.range(1,10).
-                map(e-> getEmpName(e)). //Map to make DB or External service call that returns Flux/Mono .
+                window(2).
+                flatMapSequential(identifiers-> identifiers.
+                        flatMap(empId->Flux.just(getEmpName(empId))).subscribeOn(Schedulers.newParallel("P"))).
+                subscribeOn(Schedulers.newParallel("P1")).
                 log();
 
-        Long start = System.currentTimeMillis();
-        StepVerifier.create(stringFlux)
-                .expectNext(new String[]{"A","B","C","D","E","F","G","H","I","J"})
-                .verifyComplete();
-        Long finish = System.currentTimeMillis();
 
-        long timeElapsed = finish-start;
-        System.out.println("Duration of Completion in MILLI_SECONDS >>>>"+timeElapsed);
+        StepVerifier.create(stringFlux)
+                .expectNextCount(10)
+                .verifyComplete();
+
+        try {
+            Thread.sleep(50000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 
