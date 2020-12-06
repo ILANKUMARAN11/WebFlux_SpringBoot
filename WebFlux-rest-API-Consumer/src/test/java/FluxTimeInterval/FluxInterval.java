@@ -17,22 +17,21 @@ public class FluxInterval {
     @Test
     void fluxSubscribeInterval() throws InterruptedException {
 
-        Flux<String> intervalFlux=this.createInterval().log();
+        this.createInterval()
+                .subscribe();
 
-        intervalFlux.subscribe();
-
-        Thread.sleep(3000);
+        Thread.sleep(90000);
 
     }
 
     private Flux<String> createInterval(){
 
         return Flux
-                .interval(Duration.ofMillis(100))
+                .interval(Duration.ofSeconds(2))
                 .map(tick -> {
                     String fluxString="A :"+tick.intValue();
                     return fluxString;
-                }).take(10);
+                }).take(10).log();
     }
 }
 
